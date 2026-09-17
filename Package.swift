@@ -9,11 +9,11 @@ let package = Package(
         .library(name: "Chronomorphism Macro Core", targets: ["Chronomorphism Macro Core"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-molecules/swift-birecursive.git", branch: "main"),
-        .package(url: "https://github.com/swift-molecules/swift-cofree.git", branch: "main"),
-        .package(url: "https://github.com/swift-molecules/swift-free.git", branch: "main"),
-        .package(url: "https://github.com/swift-molecules/swift-futumorphism.git", branch: "main"),
-        .package(url: "https://github.com/swift-molecules/swift-histomorphism.git", branch: "main"),
+        .package(url: "https://github.com/swift-atoms/swift-birecursive.git", branch: "main"),
+        .package(url: "https://github.com/swift-atoms/swift-cofree.git", branch: "main"),
+        .package(url: "https://github.com/swift-atoms/swift-free.git", branch: "main"),
+        .package(url: "https://github.com/swift-atoms/swift-futumorphism.git", branch: "main"),
+        .package(url: "https://github.com/swift-atoms/swift-histomorphism.git", branch: "main"),
         .package(url: "https://github.com/swiftlang/swift-syntax.git", "603.0.2"..<"604.0.0"),
     ],
     targets: [
