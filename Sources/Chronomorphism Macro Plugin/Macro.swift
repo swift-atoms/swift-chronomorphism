@@ -1,4 +1,4 @@
-import Chronomorphism_Derivation_Core
+import Chronomorphism_Macro_Core
 import SwiftSyntax
 import SwiftSyntaxMacros
 public struct Macro: MemberMacro {

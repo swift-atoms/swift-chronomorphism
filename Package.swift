@@ -3,39 +3,39 @@ import CompilerPluginSupport
 import PackageDescription
 
 let package = Package(
-    name: "swift-chronomorphism-derivation",
+    name: "swift-chronomorphism",
     products: [
-        .library(name: "Chronomorphism Derivation", targets: ["Chronomorphism Derivation"]),
-        .library(name: "Chronomorphism Derivation Core", targets: ["Chronomorphism Derivation Core"]),
+        .library(name: "Chronomorphism Macro", targets: ["Chronomorphism Macro"]),
+        .library(name: "Chronomorphism Macro Core", targets: ["Chronomorphism Macro Core"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-molecules/swift-birecursive-derivation.git", branch: "main"),
-        .package(url: "https://github.com/swift-molecules/swift-cofree-derivation.git", branch: "main"),
-        .package(url: "https://github.com/swift-molecules/swift-free-derivation.git", branch: "main"),
-        .package(url: "https://github.com/swift-molecules/swift-futumorphism-derivation.git", branch: "main"),
-        .package(url: "https://github.com/swift-molecules/swift-histomorphism-derivation.git", branch: "main"),
+        .package(url: "https://github.com/swift-molecules/swift-birecursive.git", branch: "main"),
+        .package(url: "https://github.com/swift-molecules/swift-cofree.git", branch: "main"),
+        .package(url: "https://github.com/swift-molecules/swift-free.git", branch: "main"),
+        .package(url: "https://github.com/swift-molecules/swift-futumorphism.git", branch: "main"),
+        .package(url: "https://github.com/swift-molecules/swift-histomorphism.git", branch: "main"),
         .package(url: "https://github.com/swiftlang/swift-syntax.git", "603.0.2"..<"604.0.0"),
     ],
     targets: [
-        .target(name: "Chronomorphism Derivation Core", dependencies: [
-            .product(name: "Birecursive Derivation Core", package: "swift-birecursive-derivation"),
-            .product(name: "Cofree Derivation Core", package: "swift-cofree-derivation"),
-            .product(name: "Free Derivation Core", package: "swift-free-derivation"),
-            .product(name: "Futumorphism Derivation Core", package: "swift-futumorphism-derivation"),
-            .product(name: "Histomorphism Derivation Core", package: "swift-histomorphism-derivation"),
+        .target(name: "Chronomorphism Macro Core", dependencies: [
+            .product(name: "Birecursive Macro Core", package: "swift-birecursive"),
+            .product(name: "Cofree Macro Core", package: "swift-cofree"),
+            .product(name: "Free Macro Core", package: "swift-free"),
+            .product(name: "Futumorphism Macro Core", package: "swift-futumorphism"),
+            .product(name: "Histomorphism Macro Core", package: "swift-histomorphism"),
             .product(name: "SwiftSyntax", package: "swift-syntax"),
             .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
         ]),
-        .macro(name: "Chronomorphism Derivation Macros", dependencies: [
-            "Chronomorphism Derivation Core",
+        .macro(name: "Chronomorphism Macro Plugin", dependencies: [
+            "Chronomorphism Macro Core",
             .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
             .product(name: "SwiftSyntax", package: "swift-syntax"),
             .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
         ]),
-        .target(name: "Chronomorphism Derivation", dependencies: ["Chronomorphism Derivation Macros"]),
+        .target(name: "Chronomorphism Macro", dependencies: ["Chronomorphism Macro Plugin"]),
         .testTarget(
-            name: "Chronomorphism Derivation Tests",
-            dependencies: ["Chronomorphism Derivation"]
+            name: "Chronomorphism Macro Tests",
+            dependencies: ["Chronomorphism Macro"]
         ),
     ],
     swiftLanguageModes: [.v6]

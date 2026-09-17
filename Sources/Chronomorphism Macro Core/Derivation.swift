@@ -1,18 +1,18 @@
-import Birecursive_Derivation_Core
-import Cofree_Derivation_Core
-import Free_Derivation_Core
-import Futumorphism_Derivation_Core
-import Histomorphism_Derivation_Core
+import Birecursive_Macro_Core
+import Cofree_Macro_Core
+import Free_Macro_Core
+import Futumorphism_Macro_Core
+import Histomorphism_Macro_Core
 public import SwiftSyntax
 import SwiftSyntaxBuilder
 
 public enum Derivation {
     public static func expansion(of declaration: EnumDeclSyntax) -> [DeclSyntax] {
-        var declarations = Birecursive_Derivation_Core.Derivation.expansion(of: declaration)
-        declarations += Cofree_Derivation_Core.Derivation.carrier(of: declaration)
-        declarations += Free_Derivation_Core.Derivation.carrier(of: declaration)
-        declarations += Histomorphism_Derivation_Core.Derivation.operation(of: declaration)
-        declarations += Futumorphism_Derivation_Core.Derivation.operation(of: declaration)
+        var declarations = Birecursive_Macro_Core.Derivation.expansion(of: declaration)
+        declarations += Cofree_Macro_Core.Derivation.carrier(of: declaration)
+        declarations += Free_Macro_Core.Derivation.carrier(of: declaration)
+        declarations += Histomorphism_Macro_Core.Derivation.operation(of: declaration)
+        declarations += Futumorphism_Macro_Core.Derivation.operation(of: declaration)
         declarations += operation(of: declaration)
         return declarations
     }
