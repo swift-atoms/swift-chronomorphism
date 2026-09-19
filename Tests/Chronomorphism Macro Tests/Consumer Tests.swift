@@ -1,6 +1,20 @@
+import Cofree_Macro
+import Corecursive_Macro
+import Free_Macro
+import Functor_Base_Macro
+import Futumorphism_Macro
+import Histomorphism_Macro
+import Recursive_Macro
 import Chronomorphism_Macro
 import Testing
 
+@Cofree
+@Corecursive
+@Free
+@FunctorBase
+@Futumorphism
+@Histomorphism
+@Recursive
 @Chronomorphism
 private indirect enum Natural {
     case zero
