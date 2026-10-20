@@ -5,9 +5,11 @@ public enum Derivation {}
 
 extension Derivation {
     public static func expansion(of declaration: EnumDeclSyntax) -> [DeclSyntax] {
-        let access = declaration.modifiers.contains { $0.name.tokenKind == .keyword(.public) }
+        let access =
+            declaration.modifiers.contains { $0.name.tokenKind == .keyword(.public) }
             ? "public " : ""
-        return ["""
+        return [
+            """
             \(raw: access)static func chronomorphism<Seed, Result>(
                 _ seed: Seed,
                 coalgebra: (Seed) -> Base<Free<Seed>>,
@@ -21,6 +23,7 @@ extension Derivation {
                 }
                 return history(.pure(seed)).extract
             }
-            """]
+            """
+        ]
     }
 }

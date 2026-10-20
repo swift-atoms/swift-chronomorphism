@@ -1,3 +1,4 @@
+import Chronomorphism_Macro
 import Cofree_Macro
 import Corecursive_Macro
 import Free_Macro
@@ -5,7 +6,6 @@ import Functor_Base_Macro
 import Futumorphism_Macro
 import Histomorphism_Macro
 import Recursive_Macro
-import Chronomorphism_Macro
 import Testing
 
 @Cofree
@@ -32,7 +32,7 @@ func `chronomorphism composes future unfold with historic fold`() {
             (layer: Natural.Base<Natural.Cofree<Int>>) -> Int in
             switch layer {
             case .zero: 0
-            case let .successor(.cofree(child, _)): child + 1
+            case .successor(.cofree(let child, _)): child + 1
             }
         }
     )
