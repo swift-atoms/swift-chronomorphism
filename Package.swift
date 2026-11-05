@@ -12,7 +12,6 @@ let package = Package(
         .package(url: "https://github.com/swift-atoms/swift-recursive.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-functor.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-corecursive.git", branch: "main"),
-        .package(url: "https://github.com/swift-atoms/swift-birecursive.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-cofree.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-free.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-futumorphism.git", branch: "main"),
