@@ -38,16 +38,20 @@ private func fibonacci(of seed: Int) -> Int {
     )
 }
 
-@Suite
-struct `Chronomorphism boundaries` {
-    @Test
-    func `a seed that stops at once folds the base case`() {
-        #expect(fibonacci(of: 0) == 0)
-        #expect(fibonacci(of: 1) == 1)
-    }
+enum `Boundary Tests` {}
 
-    @Test
-    func `the fold sees two layers of the unfolded history`() {
-        #expect(fibonacci(of: 10) == 55)
+extension `Boundary Tests` {
+    @Suite
+    struct `Chronomorphism boundaries` {
+        @Test
+        func `a seed that stops at once folds the base case`() {
+            #expect(fibonacci(of: 0) == 0)
+            #expect(fibonacci(of: 1) == 1)
+        }
+
+        @Test
+        func `the fold sees two layers of the unfolded history`() {
+            #expect(fibonacci(of: 10) == 55)
+        }
     }
 }
