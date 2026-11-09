@@ -1,13 +1,12 @@
 public import SwiftSyntax
 import SwiftSyntaxBuilder
+import Type_Algebra_Syntax
 
 public enum Derivation {}
 
 extension Derivation {
     public static func expansion(of declaration: EnumDeclSyntax) -> [DeclSyntax] {
-        let access =
-            declaration.modifiers.contains { $0.name.tokenKind == .keyword(.public) }
-            ? "public " : ""
+        let access = Type.Syntax.Recursion.access(of: declaration)
         return [
             """
             \(raw: access)static func chronomorphism<Seed, Result>(

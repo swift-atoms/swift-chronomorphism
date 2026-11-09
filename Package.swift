@@ -9,6 +9,7 @@ let package = Package(
         .library(name: "Chronomorphism Macro", targets: ["Chronomorphism Macro"])
     ],
     dependencies: [
+        .package(url: "https://github.com/swift-atoms/swift-algebra.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-recursive.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-functor.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-corecursive.git", branch: "main"),
@@ -22,6 +23,7 @@ let package = Package(
         .target(
             name: "Chronomorphism Macro Core",
             dependencies: [
+                .product(name: "Type Algebra Syntax", package: "swift-algebra"),
                 .product(name: "SwiftSyntax", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
             ]
@@ -50,6 +52,8 @@ let package = Package(
                 .product(name: "Corecursive Macro", package: "swift-corecursive"),
                 .product(name: "Cofree Macro", package: "swift-cofree"),
                 .target(name: "Chronomorphism Macro"),
+                .target(name: "Chronomorphism Macro Core"),
+                .product(name: "SwiftParser", package: "swift-syntax"),
             ]
         ),
     ],
